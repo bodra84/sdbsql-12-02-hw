@@ -31,8 +31,15 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 ---
 ### Решение 1
-Cкриншот веб-интерфейса RabbitMQ:
-
+Список выполненных запросов:
+```
+# п.1.2
+CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'tempass';
+# п.1.3
+SELECT user,authentication_string,host FROM mysql.user;
+```
+  
+Cкриншот cписка пользователей в базе данных:
 ![Скриншот 1](img/1_1.png)
 
 ---
