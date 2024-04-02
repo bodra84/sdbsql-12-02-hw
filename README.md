@@ -35,12 +35,23 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 ```
 # п.1.2
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'tempass';
+
 # п.1.3
 SELECT user,authentication_string,host FROM mysql.user;
+
+# п.1.4
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
+
+# п.1.5
+SHOW GRANTS FOR 'sys_temp'@'localhost';
 ```
   
-Cкриншот cписка пользователей в базе данных:
+Cкриншот запроса на получение cписка пользователей в базе данных:
 ![Скриншот 1](img/1_1.png)
+  
+Cкриншот запрос на получение списка прав для пользователя sys_temp:
+![Скриншот 2](img/1_2.png)
+
 
 ---
 ### Задание 2
