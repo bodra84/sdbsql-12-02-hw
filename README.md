@@ -40,7 +40,7 @@ CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'tempass';
 SELECT user,authentication_string,host FROM mysql.user;
 
 # п.1.4
-GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost'WITH GRANT OPTION;
 
 # п.1.5
 SHOW GRANTS FOR 'sys_temp'@'localhost';
@@ -102,5 +102,22 @@ store	         | store_id
 3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 
 *Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.*
+
+---
+### Решение 3
+Список выполненных запросов:
+```
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'sys_temp'@'localhost';
+
+GRANT ALL PRIVILEGES ON `sakila`.* TO 'sys_temp'@'localhost'WITH GRANT OPTION;
+
+REVOKE INSERT, UPDATE, DELETE ON `sakila`.* FROM 'sys_temp'@'localhost';
+
+SHOW GRANTS FOR 'sys_temp'@'localhost';
+
+```
+  
+Cкриншот запроса на получение списка прав для пользователя sys_temp:
+![Скриншот 4](img/3_1.png)
 
 ---
