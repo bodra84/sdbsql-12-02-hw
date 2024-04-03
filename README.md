@@ -45,7 +45,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
 # п.1.5
 SHOW GRANTS FOR 'sys_temp'@'localhost';
 
-# п.1.7
+# п.1.8
 CREATE DATABASE `sakila`;
 exit
 mysql -u sys_temp -p sakila < sakila-schema.sql
